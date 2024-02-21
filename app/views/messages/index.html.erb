@@ -2,6 +2,8 @@
 
 <h1>Messages</h1>
 
+<%= render partial: "messages/form", locals: { message: Message.new } %>
+
 <div id="messages">
   <% @messages.each do |message| %>
     <%= render message %>
