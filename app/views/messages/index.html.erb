@@ -2,7 +2,10 @@
 
 <h1>Messages</h1>
 
-<%= render partial: "messages/form", locals: { message: Message.new } %>
+<div id="new_message">
+  <%= render partial: "messages/form", locals: { message: Message.new } %>
+</div>
+
 
 <div id="messages">
   <% @messages.each do |message| %>
