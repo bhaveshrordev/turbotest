@@ -9,4 +9,9 @@
     <%= post.body %>
   </p>
 
+  <p>
+    <%= link_to "Show this post", post %> || 
+    <%= link_to "Edit this post", edit_post_path(post), data: { turbo_frame: 'modal' } %>
+  </p>
+
 </div>
