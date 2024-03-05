@@ -32,12 +32,13 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
+        flash[:notice] = "#{@message.id} added at #{Time.zone.now}"
         format.turbo_stream do
           render turbo_stream: [
             turbo_stream.update('new_message', partial: 'messages/form', locals: { message: Message.new }),
             turbo_stream.prepend('messages', partial: 'messages/message', locals: { message: @message }),
             turbo_stream.update('message_counter', Message.count),
-            turbo_stream.update('notice', "Message #{@message.id} created")
+            turbo_stream.prepend('flash', partial: 'layouts/flash')
           ]
         end
         format.html { redirect_to message_url(@message), notice: "Message was successfully created." }
