@@ -72,3 +72,5 @@ end
 
 gem 'faker'
 
+
+gem "pagy", "~> 6.5"
