@@ -10,6 +10,9 @@
       <%= link_to "Edit this comment", edit_comment_path(comment) %>
     </p>
   <% end %>
+
+  <%== pagy_nav(@pagy) %>
+
 </div>
 
 <%= link_to "New comment", new_comment_path %>
