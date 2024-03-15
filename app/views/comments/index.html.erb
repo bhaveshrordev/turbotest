@@ -11,7 +11,12 @@
     </p>
   <% end %>
 
-  <%== pagy_nav(@pagy) %>
+  <%#== pagy_nav(@pagy, link_extra: 'id="next_link') %>
+
+  <div id="load_more_button">
+    <%= button_to "Load More", pagy_url_for(@pagy, @pagy.next) %>
+  </div>
+
 
 </div>
 
