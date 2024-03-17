@@ -5,10 +5,6 @@
 <div id="comments">
   <% @comments.each do |comment| %>
     <%= render comment %>
-    <p>
-      <%= link_to "Show this comment", comment %> || 
-      <%= link_to "Edit this comment", edit_comment_path(comment) %>
-    </p>
   <% end %>
 
   <%#== pagy_nav(@pagy, link_extra: 'id="next_link') %>
