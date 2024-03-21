@@ -13,3 +13,7 @@ end
 150.times do
   Comment.create(body: Faker::Quote.famous_last_words)
 end
+
+150.times do
+  Employee.create(name: Faker::Games::Heroes.name, image_url: Faker::Avatar.image)
+end
