@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :employees
   resources :comments do
     collection do
       post :index
