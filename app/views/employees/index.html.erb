@@ -12,4 +12,10 @@
   <% end %>
 </div>
 
-<%= link_to "New employee", new_employee_path %>
+<%= @pagy.next %>
+
+<%= pagy_url_for(@pagy, @pagy.next) %>
+
+<%= turbo_frame_tag "employees-page-#{@pagy.next}", loading: :lazy, src: pagy_url_for(@pagy, @pagy.next)  %>
+
+<%#= link_to "New employee", new_employee_path %>

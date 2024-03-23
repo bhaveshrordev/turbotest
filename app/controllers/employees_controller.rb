@@ -4,6 +4,8 @@ class EmployeesController < ApplicationController
   # GET /employees or /employees.json
   def index
     @pagy, @employees = pagy(Employee.order(created_at: :asc), items: 5)
+
+    render "scrollable_list" if params[:page]
   end
 
   # GET /employees/1 or /employees/1.json
