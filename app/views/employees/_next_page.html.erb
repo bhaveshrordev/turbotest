@@ -1,0 +1,2 @@
+<%= "Hello I am here" %>
+<%= turbo_frame_tag "employees-page-#{@pagy.next}", loading: :lazy, src: pagy_url_for(@pagy, @pagy.next)  %>
