@@ -8,12 +8,10 @@
 
 150.times do
   Movie.create(title: Faker::Movie.unique.title)
-end
-
-150.times do
   Comment.create(body: Faker::Quote.famous_last_words)
 end
 
 50.times do
   Employee.create(name: Faker::Games::Heroes.name, image_url: Faker::Avatar.image)
+  Artist.create(name: Faker::Artist.name)
 end
