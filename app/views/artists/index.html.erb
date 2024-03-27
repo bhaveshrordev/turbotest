@@ -6,7 +6,8 @@
   <% @artists.each do |artist| %>
     <%= render artist %>
     <p>
-      <%= link_to "Show this artist", artist %>
+      <%= link_to "Show this artist", artist %> || 
+      <%= link_to "Edit this artist", edit_artist_path(artist) %>
     </p>
   <% end %>
 </div>
