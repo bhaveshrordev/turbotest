@@ -5,11 +5,9 @@
 <div id="artists">
   <% @artists.each do |artist| %>
     <%= render artist %>
-    <p>
-      <%= link_to "Show this artist", artist %> || 
-      <%= link_to "Edit this artist", edit_artist_path(artist) %>
-    </p>
   <% end %>
 </div>
 
 <%= link_to "New artist", new_artist_path %>
+
+<%= turbo_frame_tag :pagination, loading: :lazy, src: artists_path(format: :turbo_stream) %>

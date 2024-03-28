@@ -4,6 +4,10 @@ class ArtistsController < ApplicationController
   # GET /artists or /artists.json
   def index
     @pagy, @artists = pagy(Artist.order(created_at: :asc), items: 5)
+    respond_to do |format|
+      format.html
+      format.turbo_stream
+    end
   end
 
   # GET /artists/1 or /artists/1.json
