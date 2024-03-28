@@ -3,7 +3,7 @@ class ArtistsController < ApplicationController
 
   # GET /artists or /artists.json
   def index
-    @pagy, @artists = pagy(Artist.order(created_at: :asc), items: 5)
+    @pagy, @artists = pagy_countless(Artist.order(created_at: :asc), items: 5)
     respond_to do |format|
       format.html
       format.turbo_stream
